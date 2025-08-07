@@ -33,6 +33,7 @@
 		
 		<model:model model="rew52" resource="model/rew52.xml" />
 		<model:model model="position" resource="model/position.xml" />
+		<model:model model="department" resource="model/department.xml" />
 		
 		<menu:menu-category name="rew52" />
 		<menu:menu-category name="employees" />
