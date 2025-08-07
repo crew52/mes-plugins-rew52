@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model name="department" activable="true" auditable="true" deletable="true"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.qcadoo.org/model"
+       xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
+
+    <fields>
+        <string name="name" required="true" unique="true">
+            <validatesLength max="255"/>
+        </string>
+        <string name="code" required="true" unique="true">
+            <validatesLength max="100"/>
+        </string>
+        <belongsTo name="parent" model="department"/>
+
+    </fields>
+
+    <hooks/>
+
+    <identifier expression="#name + ' - ' + #code"/>
+</model>
