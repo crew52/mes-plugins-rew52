@@ -34,6 +34,7 @@
 		<model:model model="rew52" resource="model/rew52.xml" />
 		
 		<menu:menu-category name="rew52" />
+		<menu:menu-category name="employees" />
 
 		<menu:menu-item name="rew52" category="rew52"
 			view="rew52List" />
