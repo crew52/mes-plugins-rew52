@@ -22,7 +22,7 @@
 
             <option type="fullscreen" value="true"/>
             <option type="multiselect" value="true"/>
-            <option type="correspondingView" value="rew52/positionDetail"/>
+            <option type="correspondingView" value="rew52/positionDetails"/>
             <option type="correspondingComponent" value="form"/>
             <option type="fixedHeight" value="true"/>
             <option type="header" value="false"/>
