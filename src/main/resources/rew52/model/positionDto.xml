@@ -8,10 +8,10 @@
     <fields>
         <string name="name"/>
         <string name="description"/>
-        <string name="createuser"/>
-        <datetime name="createdate"/>
-        <string name="updateuser"/>
-        <datetime name="updatedate"/>
+        <string name="createUser"/>
+        <datetime name="createDate"/>
+        <string name="updateUser"/>
+        <datetime name="updateDate"/>
     </fields>
 
     <identifier expression="#name"/>
