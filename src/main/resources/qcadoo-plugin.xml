@@ -36,6 +36,8 @@
 		<model:model model="position" resource="model/position.xml" />
 		<model:model model="department" resource="model/department.xml" />
 		<model:model model="employee" resource="model/employee.xml" />
+
+		<model:model model="positionDto" resource="model/positionDto.xml"/>
 		
 		<menu:menu-category name="rew52" />
 		<menu:menu-category name="employees" />
