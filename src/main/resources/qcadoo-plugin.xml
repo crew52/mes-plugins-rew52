@@ -32,7 +32,10 @@
 		<localization:translation path="locales" />
 		
 		<model:model model="rew52" resource="model/rew52.xml" />
+		<!-- GD1 -->
 		<model:model model="position" resource="model/position.xml" />
+		<model:model model="department" resource="model/department.xml" />
+		<model:model model="employee" resource="model/employee.xml" />
 		
 		<menu:menu-category name="rew52" />
 		<menu:menu-category name="employees" />
