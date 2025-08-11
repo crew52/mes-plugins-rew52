@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model name="departmentDto" activable="true" auditable="false" deletable="false" insertable="false"
+       updatable="false"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.qcadoo.org/model"
+       xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
+
+    <fields>
+        <string name="name"/>
+        <string name="code"/>
+        <string name="parentCode"/>
+        <string name="parentName"/>
+        <string name="createUser"/>
+        <datetime name="createDate"/>
+        <string name="updateUser"/>
+        <datetime name="updateDate"/>
+    </fields>
+
+    <identifier expression="#name + ' - ' + #code"/>
+    <masterModel plugin="rew52" model="department"/>
+</model>

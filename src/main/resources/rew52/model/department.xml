@@ -11,11 +11,15 @@
         <string name="code" required="true" unique="true">
             <validatesLength max="100"/>
         </string>
+        <string name="parentName" persistent="false"/>
         <belongsTo name="parent" model="department"/>
 
     </fields>
 
-    <hooks/>
+    <hooks>
+        <onView class="com.qcadoo.mes.rew52.hooks.DepartmentHooks"
+                method="fillParentName" />
+    </hooks>
 
     <identifier expression="#name + ' - ' + #code"/>
 </model>

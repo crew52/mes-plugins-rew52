@@ -30,6 +30,9 @@
 
 	<modules>
 		<localization:translation path="locales" />
+
+		<menu:menu-category name="rew52" />
+		<menu:menu-category name="employees" />
 		
 		<model:model model="rew52" resource="model/rew52.xml" />
 		<!-- GD1 -->
@@ -38,9 +41,7 @@
 		<model:model model="employee" resource="model/employee.xml" />
 
 		<model:model model="positionDto" resource="model/positionDto.xml"/>
-		
-		<menu:menu-category name="rew52" />
-		<menu:menu-category name="employees" />
+		<model:model model="departmentDto" resource="model/departmentDto.xml"/>
 
 		<menu:menu-item name="rew52" category="rew52"
 			view="rew52List" />
@@ -50,6 +51,8 @@
 		<view:view resource="view/rew52Details.xml" />
 		<view:view resource="view/positionList.xml" />
 		<view:view resource="view/positionDetails.xml"/>
+		<view:view resource="view/departmentList.xml"/>
+		<view:view resource="view/departmentDetails.xml"/>
 		
 		<view:resource uri="public/**/*" />
 		
