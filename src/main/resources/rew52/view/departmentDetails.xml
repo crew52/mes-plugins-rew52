@@ -15,7 +15,6 @@
 
                 <layoutElement column="1" row="3">
                     <component type="lookup" name="parent" field="parent" reference="parent" hasDescription="true">
-                        <option type="column" name="name" fields="name"/>
                         <option type="column" name="code" fields="code"/>
                         <!-- <option type="column" name="parent" fields="parent"/> -->
                         <option type="column" name="parentName" fields="parentName"/>
@@ -49,4 +48,7 @@
             <option type="expression" value="#name"/>
         </component>
     </component>
+    <hooks>
+        <beforeRender class="com.qcadoo.mes.rew52.services.DepartmentService" method="onBeforeRender"/>
+    </hooks>
 </view>
