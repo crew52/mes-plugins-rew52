@@ -1,5 +1,6 @@
 package com.qcadoo.mes.rew52.services;
 
+import com.qcadoo.mes.rew52.constants.DepartmentFields;
 import com.qcadoo.view.api.ViewDefinitionState;
 import com.qcadoo.view.api.components.FieldComponent;
 import com.qcadoo.view.api.components.LookupComponent;
@@ -13,11 +14,11 @@ public class DepartmentService {
     }
     private void setFilters(final ViewDefinitionState view) {
         // Lấy name hiện tại của bản ghi
-        FieldComponent nameField = (FieldComponent) view.getComponentByReference("name");
+        FieldComponent nameField = (FieldComponent) view.getComponentByReference(DepartmentFields.NAME);
         Object nameValue = nameField.getFieldValue();
 
         // Lấy lookup parent
-        LookupComponent parent = (LookupComponent) view.getComponentByReference("parent");
+        LookupComponent parent = (LookupComponent) view.getComponentByReference(DepartmentFields.PARENT);
 
         // Lấy filter hiện tại
         FilterValueHolder filterValueHolder = parent.getFilterValue();
