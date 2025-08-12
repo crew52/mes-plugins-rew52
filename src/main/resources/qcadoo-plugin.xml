@@ -42,6 +42,7 @@
 
 		<model:model model="positionDto" resource="model/positionDto.xml"/>
 		<model:model model="departmentDto" resource="model/departmentDto.xml"/>
+		<model:model model="employeeDto" resource="model/employeeDto.xml"/>
 
 		<menu:menu-item name="rew52" category="rew52"
 			view="rew52List" />

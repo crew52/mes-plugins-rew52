@@ -8,6 +8,7 @@
     <fields>
         <string name="code" required="true" unique="true">
             <validatesLength max="100"/>
+            <!-- theo mã, tự động điền, người dùng k được điền -->
         </string>
 
         <string name="firstname" required="true">
@@ -20,10 +21,16 @@
 
         <enum name="gender" values="MALE,FEMALE,OTHER"/>
 
+        <!-- dateOfBirth check tuổi trên 18 -->
         <date name="dateOfBirth"/>
+
+        <string name="citizenId" required="true" unique="true">
+            <validatesLength max="12" min="12"/>
+        </string>
 
         <string name="email" unique="true">
             <validatesLength max="255"/>
+             <!-- format đúng email -->
         </string>
 
         <string name="phone">
