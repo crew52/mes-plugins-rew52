@@ -11,7 +11,7 @@ public class DepartmentHooks {
     public void fillParentName(final DataDefinition dataDefinition, final Entity department) {
         Entity parent = department.getBelongsToField(DepartmentFields.PARENT);
         if (parent != null) {
-            department.setField("parentName", parent.getStringField(DepartmentFields.NAME));
+            department.setField(DepartmentFields.PARENT_NAME, parent.getStringField(DepartmentFields.NAME));
         }
     }
 }
