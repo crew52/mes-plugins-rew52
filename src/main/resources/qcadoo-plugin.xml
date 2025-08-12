@@ -34,6 +34,9 @@
 		<menu:menu-category name="rew52" />
 		<menu:menu-category name="employees" />
 		
+		<menu:menu-item name="rew52" category="rew52"
+			view="rew52List" />
+		
 		<model:model model="rew52" resource="model/rew52.xml" />
 		<!-- GD1 -->
 		<model:model model="position" resource="model/position.xml" />
@@ -42,18 +45,16 @@
 
 		<model:model model="positionDto" resource="model/positionDto.xml"/>
 		<model:model model="departmentDto" resource="model/departmentDto.xml"/>
-		<model:model model="employeeDto" resource="model/employeeDto.xml"/>
-
-		<menu:menu-item name="rew52" category="rew52"
-			view="rew52List" />
-			
+		<model:model model="employeeDto" resource="model/employeeDto.xml"/>	
 
 		<view:view resource="view/rew52List.xml" />
-		<view:view resource="view/rew52Details.xml" />
 		<view:view resource="view/positionList.xml" />
-		<view:view resource="view/positionDetails.xml"/>
 		<view:view resource="view/departmentList.xml"/>
+		<view:view resource="view/employeeList.xml"/>
+		
+		<view:view resource="view/rew52Details.xml" />
 		<view:view resource="view/departmentDetails.xml"/>
+		<view:view resource="view/positionDetails.xml"/>
 		
 		<view:resource uri="public/**/*" />
 		
