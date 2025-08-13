@@ -33,7 +33,7 @@
 
 		<menu:menu-category name="rew52" />
 		<menu:menu-category name="employees" />
-		
+
 		<menu:menu-item name="rew52" category="rew52"
 			view="rew52List" />
 		
@@ -55,6 +55,7 @@
 		<view:view resource="view/rew52Details.xml" />
 		<view:view resource="view/departmentDetails.xml"/>
 		<view:view resource="view/positionDetails.xml"/>
+		<view:view resource="view/employeeDetails.xml"/>
 		
 		<view:resource uri="public/**/*" />
 		
