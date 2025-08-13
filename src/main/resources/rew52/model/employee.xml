@@ -21,16 +21,18 @@
 
         <enum name="gender" values="MALE,FEMALE,OTHER"/>
 
-        <!-- dateOfBirth check tuổi trên 18 -->
-        <date name="dateOfBirth"/>
+        <date name="dateOfBirth" required="true">
+            <validatesWith class="com.qcadoo.mes.rew52.validators.EmployeeValidators" method="validateAgeBetween18And35"/>
+        </date>
 
         <string name="citizenId" required="true" unique="true">
-            <validatesLength max="12" min="12"/>
+            <validatesRegex pattern="^0\d{11}$" message="rew52.employee.citizenId.invalid.format"/>
         </string>
 
         <string name="email" unique="true">
             <validatesLength max="255"/>
-             <!-- format đúng email -->
+            <validatesRegex pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" 
+                            message="rew52.employee.email.invalid.format"/>
         </string>
 
         <string name="phone">
