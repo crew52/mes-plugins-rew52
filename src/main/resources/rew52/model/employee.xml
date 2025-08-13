@@ -37,9 +37,13 @@
 
         <string name="phone">
             <validatesLength max="50"/>
+            <validatesRegex pattern="^0\d{9}$" 
+                            message="rew52.employee.phone.invalid.format"/>
         </string>
 
-        <date name="hireDate" required="true"/>
+        <date name="hireDate" required="true">
+            <validatesWith class="com.qcadoo.mes.rew52.validators.EmployeeValidators" method="validateHireDateAfter18AndBeforeFuture1Month"/>
+        </date>
 
         <enum name="status" values="ACTIVE,INACTIVE,TERMINATED"/>
 
