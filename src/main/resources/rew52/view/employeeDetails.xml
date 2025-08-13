@@ -31,7 +31,7 @@
 
                     <!-- Date of Birth -->
                     <layoutElement column="2" row="1">
-                        <component type="calendar" name="dateOfBirth" field="dateOfBirth" required="true"/>
+                        <component type="calendar" name="dateOfBirth" field="dateOfBirth" required="true" reference="dateOfBirth"/>
                     </layoutElement>
 
                     <!-- Citizen ID -->
@@ -57,7 +57,7 @@
 
                     <!-- Hire Date -->
                     <layoutElement column="3" row="1">
-                        <component type="calendar" name="hireDate" field="hireDate" required="true"/>
+                        <component type="calendar" name="hireDate" field="hireDate" required="true" reference="hireDate"/>
                     </layoutElement>
 
                     <!-- Status -->
