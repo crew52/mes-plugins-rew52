@@ -1,12 +1,12 @@
 package com.qcadoo.mes.rew52.services;
 
+import com.qcadoo.mes.rew52.constants.BasicConstants;
+import com.qcadoo.mes.rew52.constants.EmployeeFields;
 import com.qcadoo.view.api.ViewDefinitionState;
 import com.qcadoo.view.api.utils.NumberGeneratorService;
 import com.qcadoo.view.constants.QcadooViewConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Collection;
 
 @Service
 public class EmployeeService {
@@ -19,7 +19,7 @@ public class EmployeeService {
     }
 
     public void generateEmployeeNumber(final ViewDefinitionState view) {
-        numberGeneratorService.generateAndInsertNumber(view, "rew52", "employee",
-                QcadooViewConstants.L_FORM, "number");
+        numberGeneratorService.generateAndInsertNumber(view, BasicConstants.PLUGIN_IDENTIFIER, BasicConstants.MODEL_EMPLOYEE,
+                QcadooViewConstants.L_FORM, EmployeeFields.NUMBER);
     }
 }
