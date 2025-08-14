@@ -6,9 +6,8 @@
        xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
 
     <fields>
-        <string name="code" required="true" unique="true">
+        <string name="number" required="true" unique="true">
             <validatesLength max="100"/>
-            <!-- theo mã, tự động điền, người dùng k được điền -->
         </string>
 
         <string name="firstName" required="true">
