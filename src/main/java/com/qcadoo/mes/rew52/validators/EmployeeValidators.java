@@ -1,5 +1,6 @@
 package com.qcadoo.mes.rew52.validators;
 
+import com.qcadoo.mes.rew52.constants.EmployeeFields;
 import com.qcadoo.model.api.DataDefinition;
 import com.qcadoo.model.api.Entity;
 import com.qcadoo.model.api.FieldDefinition;
@@ -34,7 +35,7 @@ public class EmployeeValidators {
                                                                 final Object oldValue,
                                                                 final Object newValue) {
         Date hireDate = (Date) newValue;
-        Date dateOfBirth = (Date) entity.getField("dateOfBirth");
+        Date dateOfBirth = (Date) entity.getField(EmployeeFields.DATE_OF_BIRTH);
 
         if (hireDate == null || dateOfBirth == null) {
             entity.addError(fieldDefinition, ERROR_HIRE_DATE);

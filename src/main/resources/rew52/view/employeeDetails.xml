@@ -1,6 +1,5 @@
 <view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="http://schema.qcadoo.org/view" xsi:schemaLocation="http://schema.qcadoo.org/view http://schema.qcadoo.org/view.xsd" 
-    name="employeeDetails" modelName="employee">
+    xmlns="http://schema.qcadoo.org/view" xsi:schemaLocation="http://schema.qcadoo.org/view http://schema.qcadoo.org/view.xsd" name="employeeDetails" modelName="employee">
     <component type="window" name="window">
         <ribbon>
             <template name="standardFormTemplate"/>
@@ -9,9 +8,11 @@
             <component type="form" name="employee" reference="form">
                 <component type="gridLayout" name="gridLayout" columns="3" rows="6" hasBorders="true">
 
-                    <!-- Code (auto-filled, user cannot edit) -->
                     <layoutElement column="1" row="1">
-                        <component type="input" name="code" field="code" reference="code" required="true"/>
+                        <component type="input" name="number" field="number"
+                                   reference="number">
+                            <option type="alignment" value="right"/>
+                        </component>
                     </layoutElement>
 
                     <!-- First Name -->
@@ -86,7 +87,6 @@
                     <layoutElement column="1" row="6">
                         <component type="lookup" name="department" field="department" reference="department" hasDescription="true">
                             <option type="column" name="code" fields="code"/>
-\
                             <option type="column" name="parentName" fields="parentName"/>
 
                             <option type="searchable" value="name,code"/>
@@ -99,12 +99,12 @@
                 </component>
 
                 <option type="header" value="true"/>
-                <option type="expression" value="#code + ' - ' + #firstName + ' ' + #lastName"/>
+                <option type="expression" value="'EMP'+ #number + ' - ' + #firstName + ' ' + #lastName"/>
             </component>
 
         </windowTab>
     </component>
     <hooks>
-        <!-- <beforeRender class="com.qcadoo.mes.basic.hooks.AuthorDetailsHooks" method="beforeRender"/> -->
+        <beforeRender class="com.qcadoo.mes.rew52.services.EmployeeService" method="onBeforeRender"/>
     </hooks>
 </view>
