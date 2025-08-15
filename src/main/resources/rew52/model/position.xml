@@ -9,6 +9,7 @@
             <validatesLength max="255"/>
         </string>
         <string name="description"/>
+        <hasMany name="positionEmployees" plugin="rew52" model="employee" joinField="position"/>
     </fields>
 
     <hooks/>
