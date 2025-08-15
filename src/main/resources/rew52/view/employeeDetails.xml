@@ -87,7 +87,7 @@
                     <layoutElement column="1" row="6">
                         <component type="lookup" name="department" field="department" reference="department" hasDescription="true">
                             <option type="column" name="code" fields="code"/>
-                            <option type="column" name="parentName" fields="parentName"/>
+                            <option type="column" name="parentName" fields="parent" expression="#parent['name']"/>
 
                             <option type="searchable" value="name,code"/>
                             <option type="orderable" value="name"/>
