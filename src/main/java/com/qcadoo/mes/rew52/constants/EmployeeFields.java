@@ -18,4 +18,9 @@ public class EmployeeFields {
     public static final String PHOTO_PATH = "photoPath";
     public static final String POSITION = "position";
     public static final String DEPARTMENT = "department";
+
+//    ENUM VALUE
+    public static final String GENDER_ENUM_MALE = "MALE";
+    public static final String GENDER_ENUM_FEMALE = "FEMALE";
+    public static final String GENDER_ENUM_OTHER = "OTHER";
 }
