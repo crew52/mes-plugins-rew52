@@ -77,7 +77,7 @@
 
                             <option type="searchable" value="firstName,lastName,number,citizenId"/>
                             <option type="orderable" value="number"/>
-                            <option type="expression" value="#number + ' - ' + #firstName + ' ' + #lastName + ' - ' + #citizenId"/>
+                            <option type="expression" value="'EMP' + #number + ' - ' + #firstName + ' ' + #lastName + ' - ' + #citizenId"/>
                             <option type="fieldCode" value="number" link="true"/>
                         </component>
                     </layoutElement>
@@ -89,5 +89,7 @@
             </component>
         </windowTab>
     </component>
-
+    <hooks>
+        <beforeRender class="com.qcadoo.mes.rew52.services.ContractService" method="onBeforeRender"/>
+    </hooks>
 </view>
