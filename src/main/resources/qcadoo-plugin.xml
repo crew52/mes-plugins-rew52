@@ -53,6 +53,7 @@
 		<view:view resource="view/positionList.xml" />
 		<view:view resource="view/departmentList.xml"/>
 		<view:view resource="view/employeeList.xml"/>
+		<view:view resource="view/contractList.xml"/>
 		
 		<view:view resource="view/rew52Details.xml" />
 		<view:view resource="view/departmentDetails.xml"/>
