@@ -14,8 +14,7 @@
 
                     <!-- Contract Number -->
                     <layoutElement column="1" row="1">
-                        <component type="input" name="number" field="number"
-                                   reference="number" required="true">
+                        <component type="input" name="number" field="number" reference="number" required="true">
                             <option type="alignment" value="right"/>
                         </component>
                     </layoutElement>
@@ -27,7 +26,9 @@
 
                     <!-- Start Date -->
                     <layoutElement column="1" row="3">
-                        <component type="calendar" name="startDate" field="startDate" reference="startDate" required="true"/>
+                        <component type="calendar" name="startDate" field="startDate" reference="startDate" required="true">
+                            <listener event="onInputChange" class="com.qcadoo.mes.rew52.listeners.ContractDetailsListeners" method="onStartDateChange"/>
+                        </component>
                     </layoutElement>
 
                     <!-- End Date -->

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <model name="contract" activable="true" auditable="true" deletable="true"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns="http://schema.qcadoo.org/model"
-       xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schema.qcadoo.org/model" xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
 
     <fields>
         <string name="number" required="true" unique="true">
@@ -15,7 +14,10 @@
         <date name="startDate" required="true"/>
         <date name="endDate"/>
 
-        <decimal name="basicSalary" precision="15" scale="2"/>
+        <decimal name="basicSalary">
+            <validatesRange from="0" to="1000000000" exclusively="true" message="rew52.contract.basicSalary.range.error"/>
+            <validatesScale is="2" message="rew52.contract.basicSalary.scale.error"/>
+        </decimal>
 
         <enum name="status" values="EXPIRED,ACTIVE,CANCELLED,PENDING"/>
 
