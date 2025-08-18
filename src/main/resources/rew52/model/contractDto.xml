@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model name="contractDto" activable="true" auditable="false" deletable="false" insertable="false"
+       updatable="false"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.qcadoo.org/model"
+       xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
+
+    <fields>
+        <!-- Contract -->
+        <string name="contractCode"/>
+        <string name="contractNumber"/>
+        <string name="contractType"/>
+        <date name="startDate"/>
+        <date name="endDate"/>
+        <decimal name="basicSalary" precision="15" scale="2"/>
+        <string name="status"/>
+        <date name="signedDate"/>
+        <string name="attachment"/>
+        <string name="notes"/>
+
+        <!-- Employee -->
+        <string name="employeeCode"/>
+        <string name="employeeNumber"/>
+        <string name="firstName"/>
+        <string name="lastName"/>
+        <string name="fullName"/>
+        <string name="gender"/>
+        <date name="dateOfBirth"/>
+        <string name="citizenId"/>
+        <string name="email"/>
+        <string name="phone"/>
+        <date name="hireDate"/>
+        <string name="employeeStatus"/>
+        <string name="photoPath"/>
+
+        <!-- Meta -->
+        <boolean name="active"/>
+        <datetime name="createDate"/>
+        <datetime name="updateDate"/>
+        <string name="createUser"/>
+        <string name="updateUser"/>
+    </fields>
+
+    <identifier expression="#contractNumber + ' - ' + #fullName"/>
+    <masterModel plugin="rew52" model="contract"/>
+</model>

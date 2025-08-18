@@ -47,6 +47,7 @@
 		<model:model model="positionDto" resource="model/positionDto.xml"/>
 		<model:model model="departmentDto" resource="model/departmentDto.xml"/>
 		<model:model model="employeeDto" resource="model/employeeDto.xml"/>	
+		<model:model model="contractDto" resource="model/contractDto.xml"/>	
 
 		<view:view resource="view/rew52List.xml" />
 		<view:view resource="view/positionList.xml" />
