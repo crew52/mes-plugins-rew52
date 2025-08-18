@@ -10,18 +10,14 @@
             <validatesLength max="100"/>
         </string>
 
-        <string name="contractType">
-            <validatesLength max="50"/>
-        </string>
+        <enum name="contractType" values="PROBATION,OFFICIAL,SEASONAL,FIXED_3_MONTHS,FIXED_1_YEAR"/>
 
-        <date name="startDate"/>
+        <date name="startDate" required="true"/>
         <date name="endDate"/>
 
         <decimal name="basicSalary" precision="15" scale="2"/>
 
-        <string name="status">
-            <validatesLength max="50"/>
-        </string>
+        <enum name="status" values="EXPIRED,ACTIVE,CANCELLED,PENDING"/>
 
         <date name="signedDate"/>
 

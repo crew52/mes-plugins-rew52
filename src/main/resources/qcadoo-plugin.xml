@@ -59,6 +59,7 @@
 		<view:view resource="view/departmentDetails.xml"/>
 		<view:view resource="view/positionDetails.xml"/>
 		<view:view resource="view/employeeDetails.xml"/>
+		<view:view resource="view/contractDetails.xml"/>
 		
 		<view:resource uri="public/**/*" />
 		
