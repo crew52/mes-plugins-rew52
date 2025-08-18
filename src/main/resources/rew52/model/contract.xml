@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model name="contract" activable="true" auditable="true" deletable="true"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://schema.qcadoo.org/model"
+       xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
+
+    <fields>
+        <string name="number" required="true" unique="true">
+            <validatesLength max="100"/>
+        </string>
+
+        <string name="contractType">
+            <validatesLength max="50"/>
+        </string>
+
+        <date name="startDate"/>
+        <date name="endDate"/>
+
+        <decimal name="basicSalary" precision="15" scale="2"/>
+
+        <string name="status">
+            <validatesLength max="50"/>
+        </string>
+
+        <date name="signedDate"/>
+
+        <string name="attachment">
+            <validatesLength max="2048"/>
+        </string>
+
+        <string name="notes">
+            <validatesLength max="2048"/>
+        </string>
+
+        <belongsTo name="employee" model="employee" required="true"/>
+
+    </fields>
+
+    <hooks/>
+
+    <identifier expression="'CT' + #number"/>
+</model>

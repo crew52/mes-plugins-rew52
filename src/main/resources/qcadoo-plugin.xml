@@ -42,6 +42,7 @@
 		<model:model model="position" resource="model/position.xml" />
 		<model:model model="department" resource="model/department.xml" />
 		<model:model model="employee" resource="model/employee.xml" />
+		<model:model model="contract" resource="model/contract.xml" />
 
 		<model:model model="positionDto" resource="model/positionDto.xml"/>
 		<model:model model="departmentDto" resource="model/departmentDto.xml"/>
