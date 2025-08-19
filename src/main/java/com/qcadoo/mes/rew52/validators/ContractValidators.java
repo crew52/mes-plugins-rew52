@@ -50,22 +50,40 @@ public class ContractValidators {
         return true;
     }
 
-    public boolean validateSignedDateNotInFuture(final DataDefinition dataDefinition,
-                                                 final FieldDefinition fieldDefinition,
-                                                 final Entity entity,
-                                                 final Object oldValue,
-                                                 final Object newValue) {
+//    public boolean validateSignedDateNotInFuture(final DataDefinition dataDefinition,
+//                                                 final FieldDefinition fieldDefinition,
+//                                                 final Entity entity,
+//                                                 final Object oldValue,
+//                                                 final Object newValue) {
+//
+//        Date signedDate = (Date) newValue;
+//        Date today = today();
+//
+//        if (signedDate != null && signedDate.after(today)) {
+//            entity.addError(fieldDefinition, ERROR_SIGNED_IN_FUTURE);
+//            return false;
+//        }
+//
+//        return true;
+//    }
+
+    public boolean validateSignedDateBeforeStartDate(final DataDefinition dataDefinition,
+                                                     final FieldDefinition fieldDefinition,
+                                                     final Entity entity,
+                                                     final Object oldValue,
+                                                     final Object newValue) {
 
         Date signedDate = (Date) newValue;
-        Date today = today();
+        Date startDate = (Date) entity.getField(ContractFields.START_DATE);
 
-        if (signedDate != null && signedDate.after(today)) {
-            entity.addError(fieldDefinition, ERROR_SIGNED_IN_FUTURE);
+        if (signedDate != null && startDate != null && signedDate.after(startDate)) {
+            entity.addError(fieldDefinition, "rew52.contract.signedDate.afterStartDate");
             return false;
         }
 
         return true;
     }
+
 
     private Date today() {
         Calendar cal = Calendar.getInstance();

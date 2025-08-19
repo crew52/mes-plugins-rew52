@@ -27,7 +27,7 @@
         <enum name="status" values="EXPIRED,ACTIVE,CANCELLED,PENDING"/>
 
         <date name="signedDate">
-            <validatesWith class="com.qcadoo.mes.rew52.validators.ContractValidators" method="validateSignedDateNotInFuture"/>
+            <validatesWith class="com.qcadoo.mes.rew52.validators.ContractValidators" method="validateSignedDateBeforeStartDate"/>
         </date>
 
         <string name="attachment">
