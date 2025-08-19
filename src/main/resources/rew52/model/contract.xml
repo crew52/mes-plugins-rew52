@@ -21,7 +21,7 @@
 
         <decimal name="basicSalary">
             <validatesRange from="0" to="1000000000" exclusively="true" message="rew52.contract.basicSalary.range.error"/>
-            <validatesScale is="2" message="rew52.contract.basicSalary.scale.error"/>
+            <!-- <validatesScale is="2" message="rew52.contract.basicSalary.scale.error"/> -->
         </decimal>
 
         <enum name="status" values="EXPIRED,ACTIVE,CANCELLED,PENDING"/>

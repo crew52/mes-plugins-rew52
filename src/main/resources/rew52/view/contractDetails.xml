@@ -80,6 +80,7 @@
                             <option type="orderable" value="number"/>
                             <option type="expression" value="'EMP' + #number + ' - ' + #firstName + ' ' + #lastName + ' - ' + #citizenId"/>
                             <option type="fieldCode" value="number" link="true"/>
+                            <criteriaModifier class="com.qcadoo.mes.rew52.criteriaModifiers.Rew52ContractCriteriaModifiers" method="filterActiveEmployees"/>
                         </component>
                     </layoutElement>
 
