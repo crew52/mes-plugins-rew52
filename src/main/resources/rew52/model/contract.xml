@@ -9,10 +9,15 @@
             <validatesLength max="100"/>
         </string>
 
-        <enum name="contractType" values="PROBATION,OFFICIAL,SEASONAL,FIXED_3_MONTHS,FIXED_1_YEAR"/>
+        <enum name="contractType" values="PROBATION,OFFICIAL,SEASONAL,FIXED_3_MONTHS,FIXED_1_YEAR" required="true"/>
 
-        <date name="startDate" required="true"/>
-        <date name="endDate"/>
+        <date name="startDate" required="true">
+            <validatesWith class="com.qcadoo.mes.rew52.validators.ContractValidators" method="validateStartDateNotInFuture"/>
+        </date>
+
+        <date name="endDate">
+            <validatesWith class="com.qcadoo.mes.rew52.validators.ContractValidators" method="validateEndDateAfterStartDate"/>
+        </date>
 
         <decimal name="basicSalary">
             <validatesRange from="0" to="1000000000" exclusively="true" message="rew52.contract.basicSalary.range.error"/>
@@ -21,7 +26,9 @@
 
         <enum name="status" values="EXPIRED,ACTIVE,CANCELLED,PENDING"/>
 
-        <date name="signedDate"/>
+        <date name="signedDate">
+            <validatesWith class="com.qcadoo.mes.rew52.validators.ContractValidators" method="validateSignedDateNotInFuture"/>
+        </date>
 
         <string name="attachment">
             <validatesLength max="2048"/>

@@ -15,7 +15,6 @@ public class ContractService {
     private NumberGeneratorService numberGeneratorService;
 
     public void onBeforeRender(final ViewDefinitionState view) {
-        System.out.println("ContractService.onBeforeRender called");
         generateEmployeeNumber(view);
         updateEndDateField(view);
     }
@@ -30,11 +29,8 @@ public class ContractService {
         FieldComponent endDateField = (FieldComponent) viewDefinitionState.getComponentByReference(ContractFields.END_DATE);
 
         Object startDateValue = startDateField.getFieldValue();
-        System.out.println("Start Date Value: " + startDateValue);
         boolean hasStartDate = (startDateValue != null && !String.valueOf(startDateValue).trim().isEmpty());
-        System.out.println("Has Start Date: " + hasStartDate);
         endDateField.setEnabled(hasStartDate);
-        System.out.println("End Date Field Enabled: " + endDateField.isEnabled());
         if (!hasStartDate) {
             endDateField.setFieldValue(null);
         }
