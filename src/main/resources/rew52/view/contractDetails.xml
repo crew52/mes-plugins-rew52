@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schema.qcadoo.org/view" xsi:schemaLocation="http://schema.qcadoo.org/view http://schema.qcadoo.org/view.xsd" name="contractDetails" modelName="contract">
+
+    <component type="window" name="window">
+        <ribbon>
+            <template name="standardFormTemplate"/>
+        </ribbon>
+
+        <windowTab name="mainTab" reference="mainTab">
+            <component type="form" name="contract" reference="form">
+                <component type="gridLayout" name="gridLayout" columns="3" rows="5" hasBorders="true">
+
+                    <!-- Contract Number -->
+                    <layoutElement column="1" row="1">
+                        <component type="input" name="number" field="number" reference="number" required="true">
+                            <option type="alignment" value="right"/>
+                        </component>
+                    </layoutElement>
+
+                    <!-- Contract Type -->
+                    <layoutElement column="1" row="2">
+                        <component type="select" name="contractType" field="contractType" reference="contractType"/>
+                    </layoutElement>
+
+                    <!-- Start Date -->
+                    <layoutElement column="1" row="3">
+                        <component type="calendar" name="startDate" field="startDate" reference="startDate" required="true">
+                            <listener event="onInputChange" class="com.qcadoo.mes.rew52.listeners.ContractDetailsListeners" method="onStartDateChange"/>
+                        </component>
+                    </layoutElement>
+
+                    <!-- End Date -->
+                    <layoutElement column="2" row="1">
+                        <component type="calendar" name="endDate" field="endDate" reference="endDate"/>
+                    </layoutElement>
+
+                    <!-- Signed Date -->
+                    <layoutElement column="2" row="2">
+                        <component type="calendar" name="signedDate" field="signedDate" reference="signedDate"/>
+                    </layoutElement>
+
+                    <!-- Basic Salary -->
+                    <layoutElement column="2" row="3">
+                        <component type="input" name="basicSalary" field="basicSalary" reference="basicSalary"/>
+                    </layoutElement>
+
+                    <!-- Status -->
+                    <layoutElement column="3" row="1">
+                        <component type="select" name="status" field="status" reference="status"/>
+                    </layoutElement>
+
+                    <!-- Attachment -->
+                    <layoutElement column="3" row="2">
+                        <component type="file" name="attachment" field="attachment" reference="attachment"/>
+                    </layoutElement>
+
+                    <!-- Notes -->
+                    <layoutElement column="3" row="3" height="2">
+                        <component type="textarea" name="notes" field="notes" reference="notes"/>
+                    </layoutElement>
+
+                    <!-- Employee Lookup -->
+                    <layoutElement column="1" row="4" colspan="2">
+                        <component type="lookup" name="employee" field="employee" reference="employee" hasDescription="true">
+                            <option type="column" name="citizenId" fields="citizenId"/>
+                            <option type="column" name="firstName" fields="firstName"/>
+                            <option type="column" name="lastName" fields="lastName"/>
+                            <option type="column" name="gender" fields="gender"/>
+                            <option type="column" name="dateOfBirth" fields="dateOfBirth"/>
+                            <option type="column" name="email" fields="email"/>
+                            <option type="column" name="phone" fields="phone"/>
+                            <option type="column" name="hireDate" fields="hireDate"/>
+                            <option type="column" name="positionName" fields="position" expression="#position['name']"/>
+                            <option type="column" name="departmentName" fields="department" expression="#department['name']"/>
+                            <option type="column" name="status" fields="status"/>
+
+                            <option type="searchable" value="firstName,lastName,number,citizenId"/>
+                            <option type="orderable" value="number"/>
+                            <option type="expression" value="'EMP' + #number + ' - ' + #firstName + ' ' + #lastName + ' - ' + #citizenId"/>
+                            <option type="fieldCode" value="number" link="true"/>
+                            <criteriaModifier class="com.qcadoo.mes.rew52.criteriaModifiers.Rew52ContractCriteriaModifiers" method="filterActiveEmployees"/>
+                        </component>
+                    </layoutElement>
+
+                </component>
+
+                <option type="header" value="true"/>
+                <option type="expression" value="'CT' + #number"/>
+            </component>
+        </windowTab>
+    </component>
+    <hooks>
+        <beforeRender class="com.qcadoo.mes.rew52.services.ContractService" method="onBeforeRender"/>
+    </hooks>
+</view>

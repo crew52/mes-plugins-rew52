@@ -1,0 +1,45 @@
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns="http://schema.qcadoo.org/view" 
+    xsi:schemaLocation="http://schema.qcadoo.org/view http://schema.qcadoo.org/view.xsd" 
+    name="contractList" modelName="contractDto" menuAccessible="true">
+
+    <component type="window" name="window" reference="window">
+        <ribbon>
+            <template name="standardGridTemplate"/>
+        </ribbon>
+
+        <component type="grid" name="contracts" reference="grid">
+            <!-- Contract -->
+            <option type="column" name="contractNumber" fields="contractNumber" link="true"/>
+            <option type="column" name="contractType" fields="contractType"/>
+            <option type="column" name="startDate" fields="startDate"/>
+            <option type="column" name="endDate" fields="endDate"/>
+            <option type="column" name="basicSalary" fields="basicSalary"/>
+            <option type="column" name="status" fields="status"/>
+            <option type="column" name="signedDate" fields="signedDate"/>
+
+            <!-- Employee -->
+            <option type="column" name="employeeNumber" fields="employeeNumber"/>
+            <option type="column" name="fullName" fields="fullName"/>
+            <option type="column" name="citizenId" fields="citizenId"/>
+            
+            <!-- Meta -->
+            <option type="column" name="createUser" fields="createUser"/>
+            <option type="column" name="createDate" fields="createDate"/>
+            <option type="column" name="updateUser" fields="updateUser"/>
+            <option type="column" name="updateDate" fields="updateDate"/>
+
+            <option type="order" column="contractNumber, fullName" direction="asc"/>
+            <option type="searchable" value="contractNumber, fullName, employeeNumber, citizenId, email, phone, status"/>
+            <option type="orderable" value="contractNumber, fullName"/>
+
+            <option type="correspondingView" value="rew52/contractDetails"/>
+            <option type="correspondingComponent" value="form"/>
+
+            <option type="fullscreen" value="true"/>
+            <option type="multiselect" value="true"/>
+            <option type="fixedHeight" value="true"/>
+            <option type="header" value="true"/>
+        </component>
+    </component>
+</view>

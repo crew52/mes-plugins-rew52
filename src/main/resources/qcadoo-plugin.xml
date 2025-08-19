@@ -42,20 +42,24 @@
 		<model:model model="position" resource="model/position.xml" />
 		<model:model model="department" resource="model/department.xml" />
 		<model:model model="employee" resource="model/employee.xml" />
+		<model:model model="contract" resource="model/contract.xml" />
 
 		<model:model model="positionDto" resource="model/positionDto.xml"/>
 		<model:model model="departmentDto" resource="model/departmentDto.xml"/>
 		<model:model model="employeeDto" resource="model/employeeDto.xml"/>	
+		<model:model model="contractDto" resource="model/contractDto.xml"/>	
 
 		<view:view resource="view/rew52List.xml" />
 		<view:view resource="view/positionList.xml" />
 		<view:view resource="view/departmentList.xml"/>
 		<view:view resource="view/employeeList.xml"/>
+		<view:view resource="view/contractList.xml"/>
 		
 		<view:view resource="view/rew52Details.xml" />
 		<view:view resource="view/departmentDetails.xml"/>
 		<view:view resource="view/positionDetails.xml"/>
 		<view:view resource="view/employeeDetails.xml"/>
+		<view:view resource="view/contractDetails.xml"/>
 		
 		<view:resource uri="public/**/*" />
 		

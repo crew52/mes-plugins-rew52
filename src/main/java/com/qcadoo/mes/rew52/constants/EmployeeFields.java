@@ -16,6 +16,7 @@ public class EmployeeFields {
     public static final String STATUS = "status";
     public static final String NOTES = "notes";
     public static final String PHOTO_PATH = "photoPath";
+    public static final String ACTIVE = "active";
     public static final String POSITION = "position";
     public static final String DEPARTMENT = "department";
 

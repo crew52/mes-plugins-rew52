@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model name="contract" activable="true" auditable="true" deletable="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schema.qcadoo.org/model" xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
+
+    <fields>
+        <string name="number" required="true" unique="true">
+            <validatesLength max="100"/>
+        </string>
+
+        <enum name="contractType" values="PROBATION,OFFICIAL,SEASONAL,FIXED_3_MONTHS,FIXED_1_YEAR" required="true"/>
+
+        <date name="startDate" required="true"/>
+
+        <date name="endDate" required="true">
+            <validatesWith class="com.qcadoo.mes.rew52.validators.ContractValidators" method="validateEndDateAfterStartDate"/>
+        </date>
+
+        <decimal name="basicSalary">
+            <validatesRange from="0" to="1000000000" exclusively="true" message="rew52.contract.basicSalary.range.error"/>
+        </decimal>
+
+        <enum name="status" values="EXPIRED,ACTIVE,CANCELLED,PENDING"/>
+
+        <date name="signedDate">
+            <validatesWith class="com.qcadoo.mes.rew52.validators.ContractValidators" method="validateSignedDateBeforeStartDate"/>
+        </date>
+
+        <string name="attachment">
+            <validatesLength max="2048"/>
+        </string>
+
+        <string name="notes">
+            <validatesLength max="2048"/>
+        </string>
+
+        <belongsTo name="employee" model="employee" required="true"/>
+
+    </fields>
+
+    <hooks>
+        <onSave class="com.qcadoo.mes.rew52.hooks.ContractHooks" method="onSave"/>
+    </hooks>
+
+    <identifier expression="'CT' + #number"/>
+</model>
