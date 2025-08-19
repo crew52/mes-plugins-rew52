@@ -53,6 +53,7 @@
         <belongsTo name="position" model="position"/>
 
         <belongsTo name="department" model="department"/>
+        <hasMany name="employeeContracts" plugin="rew52" model="contract" joinField="employee"/>
 
     </fields>
 
