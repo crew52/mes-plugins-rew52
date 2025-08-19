@@ -9,8 +9,7 @@
                 <component type="gridLayout" name="gridLayout" columns="3" rows="6" hasBorders="true">
 
                     <layoutElement column="1" row="1">
-                        <component type="input" name="number" field="number"
-                                   reference="number">
+                        <component type="input" name="number" field="number" reference="number">
                             <option type="alignment" value="right"/>
                         </component>
                     </layoutElement>
@@ -28,7 +27,7 @@
                     <!-- Gender -->
                     <layoutElement column="1" row="4">
                         <component type="select" name="gender" field="gender" reference="gender" required="true">
-                        <listener event="onInputChange" class="com.qcadoo.mes.rew52.listeners.EmployeeDetailsListeners" method="onGenderChange"/>
+                            <listener event="onInputChange" class="com.qcadoo.mes.rew52.listeners.EmployeeDetailsListeners" method="onGenderChange"/>
                         </component>
                     </layoutElement>
 
@@ -106,7 +105,36 @@
                 <option type="header" value="true"/>
                 <option type="expression" value="'EMP'+ #number + ' - ' + #firstName + ' ' + #lastName"/>
             </component>
+        </windowTab>
 
+        <windowTab name="contractTab" reference="contractTab">
+            <component type="gridLayout" name="gridLayout" columns="3" rows="1" fixedRowHeight="false">
+                <layoutElement column="1" row="1" width="3">
+                    <component type="grid" name="employeeContracts" reference="employeeContracts" source="#{form}.employeeContracts">
+                        <option type="column" name="number" fields="number" link="true"/>
+                        <option type="column" name="contractType" fields="contractType"/>
+                        <option type="column" name="startDate" fields="startDate"/>
+                        <option type="column" name="endDate" fields="endDate"/>
+                        <option type="column" name="basicSalary" fields="basicSalary"/>
+                        <option type="column" name="status" fields="status"/>
+                        <option type="column" name="signedDate" fields="signedDate"/>
+                        <option type="column" name="notes" fields="notes"/>
+
+                        <option type="order" column="number" direction="asc"/>
+                        <option type="searchable" value="number,contractType,status"/>
+                        <option type="orderable" value="number"/>
+
+                        <option type="correspondingView" value="rew52/contractDetails"/>
+                        <option type="correspondingComponent" value="form"/>
+
+                        <option type="fullscreen" value="true"/>
+                        <option type="multiselect" value="true"/>
+                        <option type="creatable" value="true"/>
+                        <option type="deletable" value="true"/>
+                        <option type="paginable" value="true"/>
+                    </component>
+                </layoutElement>
+            </component>
         </windowTab>
     </component>
     <hooks>
