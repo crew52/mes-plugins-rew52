@@ -8,10 +8,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class Rew52ContractCriteriaModifiers {
-//    public void filterActiveEmployees(final SearchCriteriaBuilder scb, final FilterValueHolder filterValueHolder) {
-//        scb.add(SearchRestrictions.eq(EmployeeFields.ACTIVE, true));
-//    }
-
     public void filterActiveEmployees(final SearchCriteriaBuilder scb) {
         scb.add(SearchRestrictions.eq(EmployeeFields.ACTIVE, true));
     }

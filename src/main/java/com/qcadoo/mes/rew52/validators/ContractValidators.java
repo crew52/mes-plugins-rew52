@@ -33,40 +33,6 @@ public class ContractValidators {
         return true;
     }
 
-    public boolean validateStartDateNotInFuture(final DataDefinition dataDefinition,
-                                                final FieldDefinition fieldDefinition,
-                                                final Entity entity,
-                                                final Object oldValue,
-                                                final Object newValue) {
-
-        Date startDate = (Date) newValue;
-        Date today = today();
-
-        if (startDate != null && startDate.after(today)) {
-            entity.addError(fieldDefinition, ERROR_START_IN_FUTURE);
-            return false;
-        }
-
-        return true;
-    }
-
-//    public boolean validateSignedDateNotInFuture(final DataDefinition dataDefinition,
-//                                                 final FieldDefinition fieldDefinition,
-//                                                 final Entity entity,
-//                                                 final Object oldValue,
-//                                                 final Object newValue) {
-//
-//        Date signedDate = (Date) newValue;
-//        Date today = today();
-//
-//        if (signedDate != null && signedDate.after(today)) {
-//            entity.addError(fieldDefinition, ERROR_SIGNED_IN_FUTURE);
-//            return false;
-//        }
-//
-//        return true;
-//    }
-
     public boolean validateSignedDateBeforeStartDate(final DataDefinition dataDefinition,
                                                      final FieldDefinition fieldDefinition,
                                                      final Entity entity,

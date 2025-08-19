@@ -14,17 +14,19 @@ import java.util.List;
 @Service
 public class ContractHooks {
     private static final String ERROR_OVERLAP = "rew52.contract.overlapping.activeContracts";
+    private static final String ERROR_ATTACHMENT_INVALID = "rew52.contract.attachment.invalidFormat";
 
     public void onSave(final DataDefinition dataDefinition, final Entity entity) {
+        // 1. Kiểm tra định dạng file đính kèm
+        String filePath = entity.getStringField(ContractFields.ATTACHMENT);
+        if (filePath != null && !filePath.toLowerCase().endsWith(".pdf")) {
+            entity.addError(dataDefinition.getField(ContractFields.ATTACHMENT), ERROR_ATTACHMENT_INVALID);
+        }
+        // 2. Kiểm tra chồng lấn hợp đồng
         if (entity.getId() == null || entity.isValid()) {
             Long employeeId = entity.getBelongsToField(ContractFields.EMPLOYEE).getId();
             Date startDate = entity.getDateField(ContractFields.START_DATE);
             Date endDate = entity.getDateField(ContractFields.END_DATE);
-
-            // Nếu không có ngày kết thúc, giả sử là rất xa
-            if (endDate == null) {
-                endDate = new Date(Long.MAX_VALUE);
-            }
 
             /// Tìm tất cả các hợp đồng khác của cùng nhân viên,
             // có trạng thái ACTIVE hoặc PENDING, và có thời gian giao nhau

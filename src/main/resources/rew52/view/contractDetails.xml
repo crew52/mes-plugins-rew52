@@ -53,7 +53,9 @@
 
                     <!-- Attachment -->
                     <layoutElement column="3" row="2">
-                        <component type="input" name="attachment" field="attachment" reference="attachment"/>
+                        <component type="file" name="attachment" field="attachment" reference="attachment">
+                            <option type="thumbnail" value="true"/>
+                        </component>
                     </layoutElement>
 
                     <!-- Notes -->
