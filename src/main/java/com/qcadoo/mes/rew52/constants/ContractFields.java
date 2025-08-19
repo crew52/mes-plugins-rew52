@@ -17,4 +17,7 @@ public class ContractFields {
 
     // Relationships
     public static final String EMPLOYEE = "employee";
+
+    public static final String STATUS_ACTIVE = "ACTIVE";
+    public static final String STATUS_PENDING = "PENDING";
 }

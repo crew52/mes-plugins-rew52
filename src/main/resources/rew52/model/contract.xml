@@ -12,7 +12,7 @@
         <enum name="contractType" values="PROBATION,OFFICIAL,SEASONAL,FIXED_3_MONTHS,FIXED_1_YEAR" required="true"/>
 
         <date name="startDate" required="true">
-            <validatesWith class="com.qcadoo.mes.rew52.validators.ContractValidators" method="validateStartDateNotInFuture"/>
+            <!-- <validatesWith class="com.qcadoo.mes.rew52.validators.ContractValidators" method="validateStartDateNotInFuture"/> -->
         </date>
 
         <date name="endDate">
@@ -42,7 +42,9 @@
 
     </fields>
 
-    <hooks/>
+    <hooks>
+        <onSave class="com.qcadoo.mes.rew52.hooks.ContractHooks" method="onSave"/>
+    </hooks>
 
     <identifier expression="'CT' + #number"/>
 </model>
