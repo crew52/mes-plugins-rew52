@@ -13,8 +13,7 @@ import java.util.Date;
 public class ContractValidators {
 
     public static final String ERROR_END_BEFORE_START = "rew52.contract.endDate.beforeStartDate";
-    public static final String ERROR_START_IN_FUTURE = "rew52.contract.startDate.afterToday";
-    public static final String ERROR_SIGNED_IN_FUTURE = "rew52.contract.signedDate.afterToday";
+    public static final String ERROR_SIGNED_AFTER_START = "rew52.contract.signedDate.afterStartDate";
 
     public boolean validateEndDateAfterStartDate(final DataDefinition dataDefinition,
                                                  final FieldDefinition fieldDefinition,
@@ -43,20 +42,10 @@ public class ContractValidators {
         Date startDate = (Date) entity.getField(ContractFields.START_DATE);
 
         if (signedDate != null && startDate != null && signedDate.after(startDate)) {
-            entity.addError(fieldDefinition, "rew52.contract.signedDate.afterStartDate");
+            entity.addError(fieldDefinition, ERROR_SIGNED_AFTER_START);
             return false;
         }
 
         return true;
-    }
-
-
-    private Date today() {
-        Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.HOUR_OF_DAY, 0);
-        cal.set(Calendar.MINUTE, 0);
-        cal.set(Calendar.SECOND, 0);
-        cal.set(Calendar.MILLISECOND, 0);
-        return cal.getTime();
     }
 }
