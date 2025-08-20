@@ -54,10 +54,10 @@
                             	this.setEnabled(true, true);
                         	]]>
                         </script>
-<!-- 
+
                         <listener event="onInputChange"
                                   class="com.qcadoo.mes.basic.listeners.StaffsImportListeners"
-                                  method="onInputChange"/> -->
+                                  method="onInputChange"/>
                     </component>
                 </layoutElement>
                 <layoutElement column="1" row="2" width="2">
