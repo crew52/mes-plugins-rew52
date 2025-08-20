@@ -54,10 +54,10 @@
                             	this.setEnabled(true, true);
                         	]]>
                         </script>
-
+<!-- 
                         <listener event="onInputChange"
                                   class="com.qcadoo.mes.basic.listeners.StaffsImportListeners"
-                                  method="onInputChange"/>
+                                  method="onInputChange"/> -->
                     </component>
                 </layoutElement>
                 <layoutElement column="1" row="2" width="2">
@@ -70,11 +70,11 @@
 
             <!-- <listener event="processImportFile"
                       class="com.qcadoo.mes.basic.listeners.StaffsImportListeners"
-                      method="processImportFile"/>
+                      method="processImportFile"/> -->
             <listener event="downloadImportSchema"
-                      class="com.qcadoo.mes.basic.listeners.StaffsImportListeners"
+                      class="com.qcadoo.mes.basic.listeners.Rew52EmployeesImportListeners"
                       method="downloadImportSchema"/>
-            <listener event="redirectToLogs"
+            <!-- <listener event="redirectToLogs"
                       class="com.qcadoo.mes.basic.listeners.StaffsImportListeners"
                       method="redirectToLogs"/> -->
 
