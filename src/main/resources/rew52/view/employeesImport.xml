@@ -68,9 +68,9 @@
                 </layoutElement>
             </component>
 
-            <!-- <listener event="processImportFile"
-                      class="com.qcadoo.mes.basic.listeners.StaffsImportListeners"
-                      method="processImportFile"/> -->
+            <listener event="processImportFile"
+                      class="com.qcadoo.mes.basic.listeners.Rew52EmployeesImportListeners"
+                      method="processImportFile"/>
             <listener event="downloadImportSchema"
                       class="com.qcadoo.mes.basic.listeners.Rew52EmployeesImportListeners"
                       method="downloadImportSchema"/>
