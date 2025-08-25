@@ -7,6 +7,20 @@
             <group name="import">
                 <bigButton name="openEmployeesImportPage" state="enabled" icon="xlsIcon24.png" action="#{window}.fireEvent(openEmployeesImportPage);"/>
             </group>
+
+            <group name="labels">
+                <bigButton name="printEmployeeLabels" icon="pdfIcon24.png" state="disabled" message="rew52.employeeList.window.ribbon.labels.printEmployeeLabels.description">
+                    <script>
+                        <![CDATA[
+							this.addOnChangeListener({
+								onClick: function() {
+									#{grid}.performEvent('printEmployeeLabels', []);
+								}
+							});
+						]]>
+                    </script>
+                </bigButton>
+            </group>
         </ribbon>
 
         <component type="grid" name="employees" reference="grid">
@@ -37,8 +51,13 @@
             <option type="correspondingComponent" value="form"/>
             <option type="fixedHeight" value="true"/>
             <option type="header" value="true"/>
+
+            <listener event="printEmployeeLabels" class="com.qcadoo.mes.basic.listeners.Rew52EmployeesListListeners" method="printEmployeeLabels"/>
         </component>
 
         <listener event="openEmployeesImportPage" class="com.qcadoo.mes.rew52.listeners.EmployeesListListeners" method="openEmployeesImportPage"/>
     </component>
+    <hooks>
+        <beforeRender class="com.qcadoo.mes.rew52.hooks.EmployeesListHooks" method="updateRibbonState"/>
+    </hooks>
 </view>
