@@ -2,6 +2,11 @@ package com.qcadoo.mes.rew52.services;
 
 import com.qcadoo.model.api.DataDefinition;
 import com.qcadoo.model.api.Entity;
+import com.qcadoo.view.api.ComponentState;
+import com.qcadoo.view.api.ViewDefinitionState;
+import com.qcadoo.view.api.components.FieldComponent;
+import com.qcadoo.view.api.components.FormComponent;
+import com.qcadoo.view.constants.QcadooViewConstants;
 import org.springframework.stereotype.Service;
 import org.joda.time.IllegalFieldValueException;
 import org.joda.time.LocalTime;
@@ -113,5 +118,35 @@ public class WorkingShiftsService {
         } catch (NumberFormatException e) {
             throw new IllegalStateException("Invalid time " + string + ", should be hh:mm", e);
         }
+    }
+
+    public void setHourFieldsState(final ViewDefinitionState viewDefinitionState) {
+        updateDayFieldsState(viewDefinitionState);
+    }
+
+    private void updateDayFieldsState(final ViewDefinitionState viewDefinitionState) {
+        FormComponent form = (FormComponent) viewDefinitionState.getComponentByReference(QcadooViewConstants.L_FORM);
+        Entity shift = form.getEntity();
+
+        for (String day : WEEK_DAYS) {
+            updateDayFieldState(day, viewDefinitionState, shift);
+        }
+    }
+
+    private void updateDayFieldState(final String day, final ViewDefinitionState viewDefinitionState, final Entity shift) {
+        FieldComponent dayHours = (FieldComponent) viewDefinitionState.getComponentByReference(day + HOURS_LITERAL);
+
+        if (!shift.getBooleanField(day + WORKING_LITERAL)) {
+            dayHours.setEnabled(false);
+            dayHours.setRequired(false);
+        } else {
+            dayHours.setEnabled(true);
+            dayHours.setRequired(true);
+        }
+    }
+
+    public void onDayCheckboxChange(final ViewDefinitionState viewDefinitionState, final ComponentState state,
+                                    final String[] args) {
+        updateDayFieldsState(viewDefinitionState);
     }
 }
