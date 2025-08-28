@@ -43,6 +43,7 @@
 		<model:model model="department" resource="model/department.xml" />
 		<model:model model="employee" resource="model/employee.xml" />
 		<model:model model="contract" resource="model/contract.xml" />
+		<model:model model="workingShift" resource="model/workingShift.xml" />
 
 		<model:model model="positionDto" resource="model/positionDto.xml"/>
 		<model:model model="departmentDto" resource="model/departmentDto.xml"/>
@@ -54,6 +55,7 @@
 		<view:view resource="view/departmentList.xml"/>
 		<view:view resource="view/employeeList.xml"/>
 		<view:view resource="view/contractList.xml"/>
+		<view:view resource="view/workingShiftsList.xml" />
 		
 		<view:view resource="view/rew52Details.xml" />
 		<view:view resource="view/departmentDetails.xml"/>
