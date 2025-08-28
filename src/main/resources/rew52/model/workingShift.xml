@@ -24,43 +24,46 @@
     ***************************************************************************
 
 -->
-<model name="workingShift" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://schema.qcadoo.org/model"
-	xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
-	<fields>
-		<string name="name" required="true" unique="true">
-			<validatesLength max="1024" />
-		</string>
-		<boolean name="mondayWorking" default="true" />
-		<string name="mondayHours" required="false">
-			<validatesLength max="255" />
-			<!-- TODO DEV_TEAM - imho we should add regex validators for all of *Working fields -->
-			<!-- <validatesRegex pattern="\d{1,2}:\d{2}-\d{1,2}:\d{2}(,\d{1,2}:\d{2}-\d{1,2}:\d{2})*" message="some msg" /> -->
-		</string>
-		<boolean name="tuesdayWorking" default="true" />
-		<string name="tuesdayHours" required="false">
-			<validatesLength max="255" />
-		</string>
-		<boolean name="wensdayWorking" default="true" />
-		<string name="wensdayHours" required="false">
-			<validatesLength max="255" />
-		</string>
-		<boolean name="thursdayWorking" default="true" />
-		<string name="thursdayHours" required="false">
-			<validatesLength max="255" />
-		</string>
-		<boolean name="fridayWorking" default="true" />
-		<string name="fridayHours" required="false">
-			<validatesLength max="255" />
-		</string>
-		<boolean name="saturdayWorking" default="false" />
-		<string name="saturdayHours" required="false">
-			<validatesLength max="255" />
-		</string>
-		<boolean name="sundayWorking" default="false" />
-		<string name="sundayHours" required="false">
-			<validatesLength max="255" />
-		</string>
+<model name="workingShift"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schema.qcadoo.org/model" xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
+    <fields>
+        <string name="name" required="true" unique="true">
+            <validatesLength max="1024" />
+        </string>
+        <boolean name="mondayWorking" default="true" />
+        <string name="mondayHours" required="false">
+            <validatesLength max="255" />
+            <!-- TODO DEV_TEAM - imho we should add regex validators for all of *Working fields -->
+            <!-- <validatesRegex pattern="\d{1,2}:\d{2}-\d{1,2}:\d{2}(,\d{1,2}:\d{2}-\d{1,2}:\d{2})*" message="some msg" /> -->
+        </string>
+        <boolean name="tuesdayWorking" default="true" />
+        <string name="tuesdayHours" required="false">
+            <validatesLength max="255" />
+        </string>
+        <boolean name="wensdayWorking" default="true" />
+        <string name="wensdayHours" required="false">
+            <validatesLength max="255" />
+        </string>
+        <boolean name="thursdayWorking" default="true" />
+        <string name="thursdayHours" required="false">
+            <validatesLength max="255" />
+        </string>
+        <boolean name="fridayWorking" default="true" />
+        <string name="fridayHours" required="false">
+            <validatesLength max="255" />
+        </string>
+        <boolean name="saturdayWorking" default="false" />
+        <string name="saturdayHours" required="false">
+            <validatesLength max="255" />
+        </string>
+        <boolean name="sundayWorking" default="false" />
+        <string name="sundayHours" required="false">
+            <validatesLength max="255" />
+        </string>
 
-	</fields>
+    </fields>
+    <hooks>
+        <validatesWith class="com.qcadoo.mes.rew52.services.WorkingShiftsService" method="validateWorkingShiftHoursField" />
+    </hooks>
 </model>
