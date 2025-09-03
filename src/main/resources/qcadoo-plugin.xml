@@ -44,11 +44,13 @@
 		<model:model model="employee" resource="model/employee.xml" />
 		<model:model model="contract" resource="model/contract.xml" />
 		<model:model model="workingShift" resource="model/workingShift.xml" />
+		<model:model model="employeeShiftAssignment" resource="model/employeeShiftAssignment.xml" />
 
 		<model:model model="positionDto" resource="model/positionDto.xml"/>
 		<model:model model="departmentDto" resource="model/departmentDto.xml"/>
 		<model:model model="employeeDto" resource="model/employeeDto.xml"/>	
 		<model:model model="contractDto" resource="model/contractDto.xml"/>	
+		<model:model model="employeeShiftAssignmentDto" resource="model/employeeShiftAssignmentDto.xml"/>	
 
 		<view:view resource="view/rew52List.xml" />
 		<view:view resource="view/positionList.xml" />
