@@ -136,6 +136,35 @@
                 </layoutElement>
             </component>
         </windowTab>
+
+        <windowTab name="employeeShiftAssignmentTab" reference="employeeShiftAssignmentTab">
+            <component type="gridLayout" name="gridLayout" columns="3" rows="1" fixedRowHeight="false">
+                <layoutElement column="1" row="1" width="3">
+                    <component type="grid" name="employeeShiftAssignments" reference="employeeShiftAssignments" source="#{form}.employeeShiftAssignments">
+                        <!-- Các cột hiển thị trong grid -->
+                        <option type="column" name="workingShift" fields="workingShift" link="true" expression="#workingShift['name']"/>
+                        <option type="column" name="startDate" fields="startDate"/>
+                        <option type="column" name="endDate" fields="endDate"/>
+                        
+                        <!-- Sắp xếp -->
+                        <option type="order" column="startDate" direction="desc"/>
+                        <option type="searchable" value="shift"/>
+                        <option type="orderable" value="startDate,endDate"/>
+
+                        <!-- View khi click vào dòng -->
+                        <option type="correspondingView" value="rew52/employeeShiftAssignmentDetails"/>
+                        <option type="correspondingComponent" value="form"/>
+
+                        <!-- Tùy chọn hiển thị -->
+                        <option type="fullscreen" value="true"/>
+                        <option type="multiselect" value="true"/>
+                        <option type="creatable" value="true"/>
+                        <option type="deletable" value="true"/>
+                        <option type="paginable" value="true"/>
+                    </component>
+                </layoutElement>
+            </component>
+        </windowTab>
     </component>
     <hooks>
         <beforeRender class="com.qcadoo.mes.rew52.services.EmployeeService" method="onBeforeRender"/>
