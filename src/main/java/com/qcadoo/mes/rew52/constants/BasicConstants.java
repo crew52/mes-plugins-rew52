@@ -13,5 +13,6 @@ public class BasicConstants {
     public static final String MODEL_POSITION = "position";
     public static final String MODEL_CONTRACT = "contract";
     public static final String MODEL_WORKING_SHIFT = "workingShift";
+    public static final String MODEL_EMPLOYEE_SHIFT_ASSIGNMENT = "employeeShiftAssignment";
 
 }
