@@ -7,7 +7,7 @@
     <fields>
         <date name="startDate" required="true"/>
 
-        <date name="endDate"/>
+        <date name="endDate" required="true"/>
 
         <belongsTo name="employee" model="employee" required="true"/>
 
@@ -17,5 +17,7 @@
 
     <identifier expression="#employee + ' - ' + #workingShift + ' : ' + #startDate"/>
 
-    <hooks/>
+    <hooks>
+        <onSave class="com.qcadoo.mes.rew52.hooks.EmployeeShiftAssignmentHooks" method="onSave"/>
+    </hooks>
 </model>
