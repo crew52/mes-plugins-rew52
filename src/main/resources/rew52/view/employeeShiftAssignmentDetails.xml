@@ -26,6 +26,7 @@
 
                         <option type="expression" value="'EMP' + #number + ' - ' + #firstName + ' ' + #lastName"/>
                         <option type="fieldCode" value="number"/>
+                        <criteriaModifier class="com.qcadoo.mes.rew52.criteriaModifiers.Rew52CriteriaHelper" method="filterActiveEmployees"/>
                     </component>
                 </layoutElement>
 
