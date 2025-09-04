@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model name="absence" activable="true" auditable="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schema.qcadoo.org/model" xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
+
+    <fields>
+        <belongsTo name="employee" model="employee" required="true"/>
+
+        <dictionary name="absenceType" dictionary="absenceTypes" required="true"/>
+
+        <date name="startDate" required="true"/>
+        <date name="endDate" required="true"/>
+
+        <string name="reason">
+            <validatesLength max="2048"/>
+        </string>
+
+        <enum name="status" values="PENDING_APPROVAL,APPROVED,REJECTED" required="true"/>
+
+    </fields>
+
+    <identifier expression="'EMP' + #employee['number'] + ' - ' + #employee['firstName'] + ' ' + #employee['lastName']  + ' - ' + #absenceType + ' : ' + #startDate"/>
+
+    <hooks>
+        <onSave class="com.qcadoo.mes.rew52.hooks.AbsenceHooks" method="onSave"/>
+    </hooks>
+</model>
