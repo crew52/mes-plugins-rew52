@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="http://schema.qcadoo.org/model" xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
 
-     <fields>
+    <fields>
         <belongsTo name="employee" model="employee" required="true"/>
 
         <dictionary name="absenceType" dictionary="absenceTypes" required="true"/>
@@ -22,5 +22,7 @@
 
     <identifier expression="'EMP' + #employee['number'] + ' - ' + #employee['firstName'] + ' ' + #employee['lastName']  + ' - ' + #absenceType + ' : ' + #startDate"/>
 
-    <hooks/>
+    <hooks>
+        <onSave class="com.qcadoo.mes.rew52.hooks.AbsenceHooks" method="onSave"/>
+    </hooks>
 </model>
