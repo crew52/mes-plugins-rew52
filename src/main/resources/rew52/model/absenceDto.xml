@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model name="absenceDto" activable="true" auditable="false"
+       insertable="false" updatable="false"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://schema.qcadoo.org/model"
+       xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
+
+    <fields>
+
+        <string name="employeeNumber"/>
+        <string name="employeeName"/>
+
+        <string name="absenceType"/>
+        <date name="startDate"/>
+        <date name="endDate"/>
+        <string name="reason"/>
+        <string name="status"/>
+
+        <!-- Metadata -->
+        <boolean name="active"/>
+        <datetime name="createDate"/>
+        <datetime name="updateDate"/>
+        <string name="createUser"/>
+        <string name="updateUser"/>
+    </fields>
+
+    <identifier expression="#employeeNumber + ' - ' + #employeeName + ' | ' + #absenceType + ' (' + #startDate + ' → ' + #endDate + ')'"/>
+    <masterModel plugin="rew52" model="absence"/>
+</model>
