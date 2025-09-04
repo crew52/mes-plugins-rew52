@@ -4,36 +4,54 @@
     <component type="window" name="window" reference="window">
         <ribbon>
             <template name="standardGridTemplate"/>
+            <group name="dictionary">
+                <bigButton name="absenceTypes" icon="calendarIcon24.png" action="">
+                    <script>
+                        <![CDATA[
+							this.addOnChangeListener({
+								onClick: function() {
+									if(window.canClose()) {
+										#{form}.performEvent('redirectToDictionary', []);
+									}
+								}
+							});
+						]]>
+                    </script>
+                </bigButton>
+            </group>
         </ribbon>
 
-        <component type="grid" name="absences" reference="grid">
-            <!-- Các cột hợp lệ theo model absenceDto -->
-            <option type="column" name="employeeNumber" fields="employeeNumber" link="true"/>
-            <option type="column" name="employeeName" fields="employeeName"/>
-            <option type="column" name="absenceType" fields="absenceType"/>
-            <option type="column" name="startDate" fields="startDate"/>
-            <option type="column" name="endDate" fields="endDate"/>
-            <option type="column" name="reason" fields="reason"/>
-            <option type="column" name="status" fields="status"/>
+        <component type="form" name="form" reference="form">
+            <component type="grid" name="absences" reference="grid">
+                <!-- Các cột hợp lệ theo model absenceDto -->
+                <option type="column" name="employeeNumber" fields="employeeNumber" link="true"/>
+                <option type="column" name="employeeName" fields="employeeName"/>
+                <option type="column" name="absenceType" fields="absenceType"/>
+                <option type="column" name="startDate" fields="startDate"/>
+                <option type="column" name="endDate" fields="endDate"/>
+                <option type="column" name="reason" fields="reason"/>
+                <option type="column" name="status" fields="status"/>
 
-            <!-- Metadata -->
-            <option type="column" name="createUser" fields="createUser"/>
-            <option type="column" name="createDate" fields="createDate"/>
-            <option type="column" name="updateUser" fields="updateUser"/>
-            <option type="column" name="updateDate" fields="updateDate"/>
+                <!-- Metadata -->
+                <option type="column" name="createUser" fields="createUser"/>
+                <option type="column" name="createDate" fields="createDate"/>
+                <option type="column" name="updateUser" fields="updateUser"/>
+                <option type="column" name="updateDate" fields="updateDate"/>
 
-            <!-- Tùy chọn bảng -->
-            <option type="order" column="createDate" direction="desc"/>
-            <option type="searchable" value="employeeNumber,employeeName,absenceType"/>
-            <option type="orderable" value="createDate"/>
+                <!-- Tùy chọn bảng -->
+                <option type="order" column="createDate" direction="desc"/>
+                <option type="searchable" value="employeeNumber,employeeName,absenceType"/>
+                <option type="orderable" value="createDate"/>
 
-            <option type="correspondingView" value="rew52/absenceDetails"/>
-            <option type="correspondingComponent" value="form"/>
+                <option type="correspondingView" value="rew52/absenceDetails"/>
+                <option type="correspondingComponent" value="form"/>
 
-            <option type="fullscreen" value="true"/>
-            <option type="multiselect" value="true"/>
-            <option type="fixedHeight" value="true"/>
-            <option type="header" value="true"/>
+                <option type="fullscreen" value="true"/>
+                <option type="multiselect" value="true"/>
+                <option type="fixedHeight" value="true"/>
+                <option type="header" value="true"/>
+            </component>
+            <listener event="redirectToDictionary" class="com.qcadoo.mes.rew52.listeners.AbsenceTypesViewListeners" method="redirectToDictionary" />
         </component>
     </component>
 </view>
