@@ -45,6 +45,7 @@
 		<model:model model="contract" resource="model/contract.xml" />
 		<model:model model="workingShift" resource="model/workingShift.xml" />
 		<model:model model="employeeShiftAssignment" resource="model/employeeShiftAssignment.xml" />
+		<model:model model="absence" resource="model/absence.xml" />
 
 		<model:model model="positionDto" resource="model/positionDto.xml"/>
 		<model:model model="departmentDto" resource="model/departmentDto.xml"/>
