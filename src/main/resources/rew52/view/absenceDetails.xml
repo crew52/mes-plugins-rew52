@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schema.qcadoo.org/view" xsi:schemaLocation="http://schema.qcadoo.org/view http://schema.qcadoo.org/view.xsd" name="absenceDetails" modelName="absence">
+
+    <component type="window" name="window">
+
+        <ribbon>
+            <template name="standardFormTemplate"/>
+        </ribbon>
+
+        <component type="form" name="absence" reference="form">
+            <component type="gridLayout" name="gridLayout" columns="4" rows="6" hasBorders="true">
+                <!-- Employee -->
+                <layoutElement column="1" row="1">
+                    <component type="lookup" name="employee" field="employee" reference="employee" hasDescription="true">
+                        <option type="column" name="firstName" fields="firstName"/>
+                        <option type="column" name="lastName" fields="lastName"/>
+                        <option type="column" name="gender" fields="gender"/>
+                        <option type="column" name="position" fields="position" expression="#position['name']"/>
+                        <option type="column" name="department" fields="department" expression="#department['name']"/>
+                        <option type="column" name="hireDate" fields="hireDate"/>
+                        <option type="column" name="status" fields="status"/>
+
+                        <option type="searchable" value="number,firstName,lastName"/>
+                        <option type="orderable" value="number,firstName,lastName"/>
+
+                        <option type="expression" value="'EMP' + #number + ' - ' + #firstName + ' ' + #lastName"/>
+                        <option type="fieldCode" value="number"/>
+                    </component>
+                </layoutElement>
+
+                <!-- Absence Type -->
+                <layoutElement column="1" row="2">
+                    <component type="select" name="absenceType" field="absenceType" reference="absenceType"/>
+                </layoutElement>
+
+                <!-- Start Date -->
+                <layoutElement column="1" row="3">
+                    <component type="calendar" name="startDate" field="startDate" reference="startDate"/>
+                </layoutElement>
+
+                <!-- End Date -->
+                <layoutElement column="1" row="4">
+                    <component type="calendar" name="endDate" field="endDate" reference="endDate"/>
+                </layoutElement>
+
+                <!-- Reason -->
+                <layoutElement column="2" row="1" height="2">
+                    <component type="textarea" name="reason" field="reason" reference="reason"/>
+                </layoutElement>
+
+                <!-- Status -->
+                <layoutElement column="2" row="3">
+                    <component type="select" name="status" field="status" reference="status"/>
+                </layoutElement>
+
+                <!-- Create User -->
+                <layoutElement column="3" row="1">
+                    <component type="input" name="createUser" field="createUser" reference="createUser" defaultEnabled="never"/>
+                </layoutElement>
+
+                <!-- Create Date -->
+                <layoutElement column="3" row="2">
+                    <component type="calendar" name="createDate" field="createDate" reference="createDate" defaultEnabled="never">
+                        <option type="withTimePicker" value="true"/>
+                    </component>
+                </layoutElement>
+
+                <!-- Update User -->
+                <layoutElement column="3" row="3">
+                    <component type="input" name="updateUser" field="updateUser" reference="updateUser" defaultEnabled="never"/>
+                </layoutElement>
+
+                <!-- Update Date -->
+                <layoutElement column="3" row="4">
+                    <component type="calendar" name="updateDate" field="updateDate" reference="updateDate" defaultEnabled="never">
+                        <option type="withTimePicker" value="true"/>
+                    </component>
+                </layoutElement>
+
+            </component>
+
+            <option type="header" value="true"/>
+            <option type="expression" value="'EMP' + #employee['number'] + ' - ' + #employee['firstName'] + ' ' + #employee['lastName']  + ' - ' + #absenceType + ' : ' + #startDate"/>
+        </component>
+
+    </component>
+
+    <hooks/>
+</view>
