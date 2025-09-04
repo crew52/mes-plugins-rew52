@@ -61,6 +61,7 @@
 		<view:view resource="view/contractList.xml"/>
 		<view:view resource="view/workingShiftsList.xml" />
 		<view:view resource="view/employeeShiftAssignmentList.xml" />
+		<view:view resource="view/absenceList.xml" />
 		
 		<view:view resource="view/rew52Details.xml" />
 		<view:view resource="view/departmentDetails.xml"/>
