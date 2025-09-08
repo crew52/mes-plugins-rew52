@@ -27,13 +27,13 @@
 				<version>${qcadoo.version}</version>
 				<extensions>true</extensions>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
 				</configuration>
-			</plugin>
+			</plugin> -->
 		</plugins>
 		<resources>
 			<resource>
@@ -113,6 +113,11 @@
 			<groupId>com.qcadoo</groupId>
 			<artifactId>qcadoo-view</artifactId>
 			<version>${qcadoo.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.qcadoo.mes</groupId>
+			<artifactId>mes-plugins-basic</artifactId>
+			<version>1.5-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
