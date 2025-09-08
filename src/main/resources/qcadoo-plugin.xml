@@ -68,8 +68,6 @@
 		<view:view resource="view/workingShiftsList.xml" />
 		<view:view resource="view/employeeShiftAssignmentList.xml" />
 		<view:view resource="view/absenceList.xml" />
-
-		<view:view resource="view/employeeListDemo.xml"/>
 		
 		<view:view resource="view/rew52Details.xml" />
 		<view:view resource="view/departmentDetails.xml"/>
@@ -81,7 +79,6 @@
 		<view:view resource="view/absenceDetails.xml"/>
 
 		<view:view resource="view/employeesImport.xml" />
-		<view:view resource="view/employeesImportDemo.xml" />
 		
 		<view:resource uri="public/**/*" />
 		
