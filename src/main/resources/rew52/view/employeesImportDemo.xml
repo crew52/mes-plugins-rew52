@@ -55,9 +55,9 @@
                         	]]>
                         </script>
 
-                        <listener event="onInputChange"
+                        <!-- <listener event="onInputChange"
                                   class="com.qcadoo.mes.basic.listeners.Rew52EmployeesImportListeners"
-                                  method="onInputChange"/>
+                                  method="onInputChange"/> -->
                     </component>
                 </layoutElement>
                 <layoutElement column="1" row="2" width="2">
@@ -68,15 +68,15 @@
                 </layoutElement>
             </component>
 
-            <listener event="processImportFile"
+            <!-- <listener event="processImportFile"
                       class="com.qcadoo.mes.basic.listeners.Rew52EmployeesImportListeners"
-                      method="processImportFile"/>
+                      method="processImportFile"/> -->
             <listener event="downloadImportSchema"
-                      class="com.qcadoo.mes.basic.listeners.Rew52EmployeesImportListeners"
+                      class="com.qcadoo.mes.rew52.listeners.EmployeesImportListeners"
                       method="downloadImportSchema"/>
-            <listener event="redirectToLogs"
+            <!-- <listener event="redirectToLogs"
                       class="com.qcadoo.mes.basic.listeners.Rew52EmployeesImportListeners"
-                      method="redirectToLogs"/>
+                      method="redirectToLogs"/> -->
 
             <option type="header" value="false"/>
         </component>
