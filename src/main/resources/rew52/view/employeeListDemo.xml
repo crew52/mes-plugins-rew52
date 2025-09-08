@@ -55,7 +55,7 @@
             <listener event="printEmployeeLabels" class="com.qcadoo.mes.basic.listeners.Rew52EmployeesListListeners" method="printEmployeeLabels"/>
         </component>
 
-        <listener event="openEmployeesImportPage" class="com.qcadoo.mes.rew52.listeners.EmployeesListListeners" method="openEmployeesImportPage"/>
+        <listener event="openEmployeesImportPage" class="com.qcadoo.mes.rew52.listeners.EmployeesListListeners" method="openEmployeesImportPageDemo"/>
     </component>
     <hooks>
         <beforeRender class="com.qcadoo.mes.rew52.hooks.EmployeesListHooks" method="updateRibbonState"/>

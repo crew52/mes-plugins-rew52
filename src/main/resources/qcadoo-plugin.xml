@@ -81,6 +81,7 @@
 		<view:view resource="view/absenceDetails.xml"/>
 
 		<view:view resource="view/employeesImport.xml" />
+		<view:view resource="view/employeesImportDemo.xml" />
 		
 		<view:resource uri="public/**/*" />
 		

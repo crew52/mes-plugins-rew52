@@ -10,4 +10,8 @@ public class EmployeesListListeners {
         StringBuilder url = new StringBuilder("../page/rew52/employeesImport.html");
         view.openModal(url.toString());
     }
+    public void openEmployeesImportPageDemo(final ViewDefinitionState view, final ComponentState state, final String[] args) {
+        StringBuilder url = new StringBuilder("../page/rew52/employeesImportDemo.html");
+        view.openModal(url.toString());
+    }
 }
