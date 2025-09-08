@@ -52,7 +52,7 @@
             <option type="fixedHeight" value="true"/>
             <option type="header" value="true"/>
 
-            <listener event="printEmployeeLabels" class="com.qcadoo.mes.basic.listeners.Rew52EmployeesListListeners" method="printEmployeeLabels"/>
+            <listener event="printEmployeeLabels" class="com.qcadoo.mes.rew52.listeners.EmployeesListListeners" method="printEmployeeLabels"/>
         </component>
 
         <listener event="openEmployeesImportPage" class="com.qcadoo.mes.rew52.listeners.EmployeesListListeners" method="openEmployeesImportPage"/>
