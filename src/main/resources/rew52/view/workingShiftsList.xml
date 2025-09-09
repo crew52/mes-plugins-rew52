@@ -31,6 +31,9 @@
 
         <ribbon>
             <template name="standardGridTemplate" />
+            <group name="calendar">
+                <bigButton name="showCalendar" state="enabled" icon="calendarIcon24.png" action="#{grid}.fireEvent(showGanttShiftCalendar);"/>
+            </group>
         </ribbon>
 
         <component type="grid" name="workingShifts" reference="grid">
