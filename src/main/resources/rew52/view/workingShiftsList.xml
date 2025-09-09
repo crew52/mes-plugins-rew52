@@ -49,6 +49,8 @@
 
             <option type="fullscreen" value="true" />
             <option type="multiselect" value="true" />
+            
+            <listener event="showGanttShiftCalendar" class="com.qcadoo.mes.rew52.services.GanttWorkingShiftsService" method="showGanttWorkingShiftCalendar"/>
         </component>
 
         <option type="fixedHeight" value="true" />
