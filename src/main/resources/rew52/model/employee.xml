@@ -55,6 +55,7 @@
         <belongsTo name="department" model="department"/>
         <hasMany name="employeeContracts" plugin="rew52" model="contract" joinField="employee"/>
         <hasMany name="employeeShiftAssignments" plugin="rew52" model="employeeShiftAssignment" joinField="employee"/>
+        <hasMany name="employeeAbsences" plugin="rew52" model="absence" joinField="employee"/>
 
     </fields>
 
