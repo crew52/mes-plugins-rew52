@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin plugin="rew52" group="framework" version="1.5-SNAPSHOT"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schema.qcadoo.org/plugin"
-	xmlns:model="http://schema.qcadoo.org/modules/model" xmlns:view="http://schema.qcadoo.org/modules/view"
-	xmlns:menu="http://schema.qcadoo.org/modules/menu" xmlns:localization="http://schema.qcadoo.org/modules/localization"
-	xmlns:report="http://schema.qcadoo.org/modules/report"
-	xsi:schemaLocation="
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://schema.qcadoo.org/plugin"
+	xmlns:model="http://schema.qcadoo.org/modules/model"
+	xmlns:view="http://schema.qcadoo.org/modules/view"
+	xmlns:menu="http://schema.qcadoo.org/modules/menu"
+	xmlns:security="http://schema.qcadoo.org/modules/security"
+	xmlns:localization="http://schema.qcadoo.org/modules/localization"
+	xmlns:report="http://schema.qcadoo.org/modules/report" xsi:schemaLocation="
        http://schema.qcadoo.org/plugin
        http://schema.qcadoo.org/plugin.xsd
        http://schema.qcadoo.org/modules/model
@@ -37,12 +40,13 @@
 	<modules>
 		<localization:translation path="locales" />
 
-		<menu:menu-category name="rew52" />
-		<menu:menu-category name="employees" />
+		<security:role identifier="ROLE_EMPLOYEES"/>
 
-		<menu:menu-item name="rew52" category="rew52"
-			view="rew52List" />
-		
+		<menu:menu-category name="rew52"/>
+		<menu:menu-category name="employees"/>
+
+		<menu:menu-item name="rew52" category="rew52" view="rew52List" />
+
 		<model:model model="rew52" resource="model/rew52.xml" />
 		<!-- GD1 -->
 		<model:model model="position" resource="model/position.xml" />
@@ -55,9 +59,9 @@
 
 		<model:model model="positionDto" resource="model/positionDto.xml"/>
 		<model:model model="departmentDto" resource="model/departmentDto.xml"/>
-		<model:model model="employeeDto" resource="model/employeeDto.xml"/>	
-		<model:model model="contractDto" resource="model/contractDto.xml"/>	
-		<model:model model="employeeShiftAssignmentDto" resource="model/employeeShiftAssignmentDto.xml"/>	
+		<model:model model="employeeDto" resource="model/employeeDto.xml"/>
+		<model:model model="contractDto" resource="model/contractDto.xml"/>
+		<model:model model="employeeShiftAssignmentDto" resource="model/employeeShiftAssignmentDto.xml"/>
 		<model:model model="absenceDto" resource="model/absenceDto.xml"/>
 
 		<view:view resource="view/rew52List.xml" />
@@ -68,7 +72,7 @@
 		<view:view resource="view/workingShiftsList.xml" />
 		<view:view resource="view/employeeShiftAssignmentList.xml" />
 		<view:view resource="view/absenceList.xml" />
-		
+
 		<view:view resource="view/rew52Details.xml" />
 		<view:view resource="view/departmentDetails.xml"/>
 		<view:view resource="view/positionDetails.xml"/>
@@ -79,11 +83,11 @@
 		<view:view resource="view/absenceDetails.xml"/>
 
 		<view:view resource="view/employeesImport.xml" />
-		
+
 		<view:view resource="view/ganttForWorkingShifts.xml" />
-		
+
 		<view:resource uri="public/**/*" />
-		
+
 		<report:report-template name="sample" resource="report/sample.jrxml" />
 
 	</modules>
