@@ -83,6 +83,7 @@
 		<view:view resource="view/workingShiftDetails.xml"/>
 		<view:view resource="view/employeeShiftAssignmentDetails.xml"/>
 		<view:view resource="view/absenceDetails.xml"/>
+		<view:view resource="view/salaryComponentDetails.xml"/>
 
 		<view:view resource="view/employeesImport.xml" />
 
