@@ -56,6 +56,7 @@
 		<model:model model="workingShift" resource="model/workingShift.xml" />
 		<model:model model="employeeShiftAssignment" resource="model/employeeShiftAssignment.xml" />
 		<model:model model="absence" resource="model/absence.xml" />
+		<model:model model="salaryComponent" resource="model/salaryComponent.xml" />
 
 		<model:model model="positionDto" resource="model/positionDto.xml"/>
 		<model:model model="departmentDto" resource="model/departmentDto.xml"/>
@@ -72,6 +73,7 @@
 		<view:view resource="view/workingShiftsList.xml" />
 		<view:view resource="view/employeeShiftAssignmentList.xml" />
 		<view:view resource="view/absenceList.xml" />
+		<view:view resource="view/salaryComponentList.xml" />
 
 		<view:view resource="view/rew52Details.xml" />
 		<view:view resource="view/departmentDetails.xml"/>
@@ -81,6 +83,7 @@
 		<view:view resource="view/workingShiftDetails.xml"/>
 		<view:view resource="view/employeeShiftAssignmentDetails.xml"/>
 		<view:view resource="view/absenceDetails.xml"/>
+		<view:view resource="view/salaryComponentDetails.xml"/>
 
 		<view:view resource="view/employeesImport.xml" />
 
