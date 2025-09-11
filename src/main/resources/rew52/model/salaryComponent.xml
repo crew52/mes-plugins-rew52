@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="salaryComponent" activable="true" auditable="true" deletable="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schema.qcadoo.org/model" xsi:schemaLocation="http://schema.qcadoo.org/model http://schema.qcadoo.org/model.xsd">
+    <fields>
+        <string name="name" required="true" unique="true">
+            <validatesLength max="200" />
+        </string>
+        <enum name="type" values="EARNING,DEDUCTION" required="true"/>
+        <string name="formula">
+            <validatesLength max="1024" />
+        </string>
+        <boolean name="isRequired" default="false" />
+    </fields>
+    <hooks/>
+    <identifier expression="#name + ' - ' + #type"/>
+</model>
